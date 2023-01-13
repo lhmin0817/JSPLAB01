@@ -12,7 +12,7 @@
 	String add=request.getParameter("addr");
 %>
 <%
-	out.println("ID :" +id+"<p/>");
+	out.println("id :" +id+"<p/>");
 	out.println("이름 :" +en+"<p/>");
 	out.println("핸드폰 번호 :" +pon+"<p/>");
 	out.println("성별 :" +gen+"<p/>");
@@ -25,7 +25,7 @@
 	
 	try{
 		stmt=conn.createStatement();
-		sql="INSERT into guestlab(idx,ename,phone, gender, addr) values('"+id+"','"+en+"','"+pon+"','"+gen+"','"+add+"')";
+		sql="INSERT into guestlab(idx,ename,phone, gender, addr) values("+id+",'"+en+"','"+pon+"','"+gen+"','"+add+"')";
 		out.println(sql);
 		stmt.executeQuery(sql);	
 	}
@@ -42,7 +42,8 @@
 		}
 	}
 %>
-<jsp:forward page="gueestlab_show03.jsp" />
+
+<jsp:forward page="freelab_list03.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
